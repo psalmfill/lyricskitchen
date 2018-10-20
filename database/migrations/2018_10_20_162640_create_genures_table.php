@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommentsCategoriesTable extends Migration
+class CreateGenuresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateCommentsCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('comments_categories', function (Blueprint $table) {
+        Schema::create('genures', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('comment_group_id');
-            $table->integer('member_id');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateCommentsCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('comments_categories');
+        Schema::dropIfExists('genures');
     }
 }
