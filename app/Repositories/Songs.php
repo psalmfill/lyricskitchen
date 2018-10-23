@@ -32,7 +32,10 @@ class Songs {
     }
 
     public function create($data){
-        $data['slug'] = get_slug($data['name'],"Song");
+        $data['slug'] = get_slug($data['title'],"Song");
+        $data['tags'] = !empty($data['tags']) ? $data['tags']:"";
+        $data['year'] = !empty($data['year']) ? $data['year']:"";
+        $data['video_url'] = !empty($data['video_url']) ? $data['tags']:"";
         if($this->song->create($data)){
             return true;
         }
@@ -42,13 +45,22 @@ class Songs {
 
     }
     public function delete($id){
-        if($this.getSongbyId($id)->delete()){
+        if($this->getSongbyId($id)->delete()){
         return true;
         }else{
             return false;
         }
     }
 
+    public function update($id, $data){
+        $song = $this->getSongbyId($id);
+        if($song->update($data)){
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
     
 
 }

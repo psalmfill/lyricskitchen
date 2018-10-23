@@ -23,6 +23,7 @@ class AdminController extends Controller
         $this->albums_repo = $album;
         $this->songs_repo = $songs;
         $this->genures_repo = $genures;
+        $this->middleware('admin');
     }
 
     public function index()
@@ -33,7 +34,8 @@ class AdminController extends Controller
             'songs_count' => $this->songs_repo->getAll()->count(),
             'genures_count' => $this->genures_repo->getAll()->count(),
         ];
-        return \View::make('admin.index',compact('data'));
+        $users = \App\User::all();
+        return \View::make('admin.index',compact('users'));
 
     }
 

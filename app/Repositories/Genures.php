@@ -39,4 +39,15 @@ class Genures {
         }
 
     }
+
+    public function update($id, $data){
+
+        $genure = $this->getGenureById($id);
+        if($genure->update($data)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 }

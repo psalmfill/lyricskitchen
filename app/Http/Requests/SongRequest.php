@@ -13,7 +13,7 @@ class SongRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,11 +23,12 @@ class SongRequest extends FormRequest
      */
     public function rules()
     {
+        
         return [
             'title' =>'required',
             'lyrics' =>'required',
             'artist_id' => 'required',
-            'genure_id' => 'reuired'
+            'genure_id' => 'required'
         ];
     }
 }

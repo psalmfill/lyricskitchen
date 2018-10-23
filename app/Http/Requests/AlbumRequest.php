@@ -13,7 +13,7 @@ class AlbumRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,7 @@ class AlbumRequest extends FormRequest
     {
         return [
             
-            'name'=>'required|min:3',
+            'title'=>'required|min:3',
             'artist_id' => 'required'
         ];
     }

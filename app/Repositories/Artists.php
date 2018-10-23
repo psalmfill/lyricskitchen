@@ -37,10 +37,26 @@ class Artists {
         return $artist->albums();
     }
 
-    public function create($data)
-    {   $data['slug'] = get_slug($data['name'],"Artist");
-        if($this->artist->create($data)){
-            return true;
+    public function create($request)
+    {  $data = $request->all();
+        $artist = new Artist();
+        $artist->name = $data['name'];
+        $artist->slug = get_slug($data['name'],'Artist');
+        $artist->year = $data['year'];
+        $artist->biography = $data['bio'];
+         if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $extension = $file->extension()?: 'png';
+                $picture = $artist->slug . '.' . $extension;
+                $destinationPath = public_path() . '/uploads/artists/';
+                $file->move($destinationPath, $picture);
+                $artist->avatar = $picture;
+            }else{
+                $artist->avatar = "artist.jpg";
+            }
+       
+        if($artist->save()){
+           return true;
         }
         else{
             return false;

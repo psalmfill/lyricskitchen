@@ -7,7 +7,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
-{
+{   
+    const ADMIN = 1;
     use Notifiable;
 
     /**
@@ -27,4 +28,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected  $ADMIN = "Admin";
+
+    public function role(){
+        return $this->belongsTo('App\Role');
+    }
+
+    public function isAdmin(){
+        // dd($this->role()->id);
+        return $this->role->title === $this->ADMIN;
+    }
+    
 }

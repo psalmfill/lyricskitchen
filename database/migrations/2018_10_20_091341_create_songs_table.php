@@ -18,12 +18,12 @@ class CreateSongsTable extends Migration
             $table->string('title');
             $table->string('slug');
             $table->longText('lyrics');
-            $table->string('tags');
-            $table->string('video_url');
+            $table->string('tags')->nullable();
+            $table->string('video_url')->nullable();
             $table->integer('artist_id');
-            $table->integer('album_id');
-            $table->integer('genure_id');
-            $table->integer('views');
+            $table->integer('album_id')->nullable();
+            $table->integer('genure_id')->nullable();
+            $table->integer('views')->default(0);
             $table->integer('year');
             $table->timestamps();
         });

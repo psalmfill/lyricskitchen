@@ -17,7 +17,8 @@ class CreateArtistsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
-            $table->string('biography');
+            $table->longText('biography');
+            $table->string('avatar')->default('artist.png');
             $table->string('year');
             $table->timestamps();
         });
