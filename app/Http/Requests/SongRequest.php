@@ -28,7 +28,7 @@ class SongRequest extends FormRequest
             'title' =>'required',
             'lyrics' =>'required',
             'artist_id' => 'required',
-            'genure_id' => 'required'
+            'genre_id' => 'required'
         ];
     }
 }

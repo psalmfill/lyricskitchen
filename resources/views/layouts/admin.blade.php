@@ -118,7 +118,7 @@
                             <li role="separator" class="divider"></li>
                             <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                            <li><a href="{{Auth::logout()}}"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                         <!-- /.dropdown-user -->
                     </li>
@@ -150,45 +150,45 @@
                         </ul>
                     </li>
                     
-                    <li> <a href="{{route('admin_home')}}" class="waves-effect"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard </span> <span class="label label-rouded label-inverse pull-right">4</span></span></a></li>
+                    <li> <a href="{{route('admin.home')}}" class="waves-effect"><i class="mdi mdi-av-timer fa-fw" data-icon="v"></i> <span class="hide-menu"> Dashboard </span> <span class="label label-rouded label-inverse pull-right">4</span></span></a></li>
                     <li class="devider"></li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="ti-user fa-fw" data-icon="v"></i> <span class="hide-menu"> Manage Artist <span class="fa arrow"></span> </span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{route('artist_home')}}"><i class="ti-user fa-fw"></i><span class="hide-menu">All Artist</span></a> </li>
-                            <li> <a href="{{route('artist_form')}}"><i class="ti-plus fa-fw"></i><span class="hide-menu">Add New</span></a> </li>
+                            <li> <a href="{{route('admin.artist.home')}}"><i class="ti-user fa-fw"></i><span class="hide-menu">All Artist</span></a> </li>
+                            <li> <a href="{{route('admin.artist.form')}}"><i class="ti-plus fa-fw"></i><span class="hide-menu">Add New</span></a> </li>
                         </ul>
                     </li>
                     <li class="devider"></li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-music fa-fw" data-icon="v"></i> <span class="hide-menu"> Manage Songs <span class="fa arrow"></span> </span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{route('song_home')}}"><i class="ti-music fa-fw"></i><span class="hide-menu">Songs</span></a> </li>
-                            <li> <a href="{{route('song_form')}}"><i class="ti-plus fa-fw"></i><span class="hide-menu">Add New</span></a> </li>
+                            <li> <a href="{{route('admin.songs.home')}}"><i class="ti-music fa-fw"></i><span class="hide-menu">Songs</span></a> </li>
+                            <li> <a href="{{route('admin.song.form')}}"><i class="ti-plus fa-fw"></i><span class="hide-menu">Add New</span></a> </li>
                         </ul>
                     </li>
                     <li class="devider"></li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-gallery fa-fw" data-icon="v"></i> <span class="hide-menu"> Manage Albums <span class="fa arrow"></span> </span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{route('album_home')}}"><i class="ti-gallery fa-fw"></i><span class="hide-menu">All Albums</span></a> </li>
-                            <li> <a href="{{route('album_form')}}"><i class="ti-plus fa-fw"></i><span class="hide-menu">Add New</span></a> </li>
+                            <li> <a href="{{route('admin.album.home')}}"><i class="ti-gallery fa-fw"></i><span class="hide-menu">All Albums</span></a> </li>
+                            <li> <a href="{{route('admin.album.form')}}"><i class="ti-plus fa-fw"></i><span class="hide-menu">Add New</span></a> </li>
                         </ul>
                     </li>
-                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-music fa-fw" data-icon="v"></i> <span class="hide-menu"> Manage Genures <span class="fa arrow"></span> </span></a>
+                    <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-music fa-fw" data-icon="v"></i> <span class="hide-menu"> Manage Genres <span class="fa arrow"></span> </span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{route('genure_home')}}"><i class="ti-music fa-fw"></i><span class="hide-menu">Genures</span></a> </li>
-                            <li> <a href="{{route('genure_form')}}"><i class="ti-plus fa-fw"></i><span class="hide-menu">Add New</span></a> </li>
+                            <li> <a href="{{route('admin.genre.home')}}"><i class="ti-music fa-fw"></i><span class="hide-menu">Genres</span></a> </li>
+                            <li> <a href="{{route('admin.genre.form')}}"><i class="ti-plus fa-fw"></i><span class="hide-menu">Add New</span></a> </li>
                         </ul>
                     </li>
                     <li class="devider"></li>
                     <li> <a href="javascript:void(0);" class="waves-effect"><i class="ti-music fa-fw" data-icon="v"></i> <span class="hide-menu"> Songs Apis <span class="fa arrow"></span> </span></a>
                         <ul class="nav nav-second-level">
-                            <li> <a href="{{route('genure_home')}}"><i class="ti-music fa-fw"></i><span class="hide-menu">Genius.com</span></a> </li>
-                            <li> <a href="{{route('genure_form')}}"><i class="ti-plus fa-fw"></i><span class="hide-menu">Mixmatch</span></a> </li>
+                            <li> <a href="{{route('admin.genius.index')}}"><i class="ti-music fa-fw"></i><span class="hide-menu">Genius.com</span></a> </li>
+                            <li> <a href="{{route('admin.genre.form')}}"><i class="ti-plus fa-fw"></i><span class="hide-menu">Mixmatch</span></a> </li>
                         </ul>
                     </li>
                     <li class="devider"></li>
                     
                      
-                    <li><a href="login.html" class="waves-effect"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>
+                    <li><a href="{{ URL::to('logout') }}" class="waves-effect"><i class="mdi mdi-logout fa-fw"></i> <span class="hide-menu">Log out</span></a></li>
                     <li class="devider"></li>
                 </ul>
             </div>

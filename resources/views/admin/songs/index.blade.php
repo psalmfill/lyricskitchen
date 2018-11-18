@@ -22,7 +22,7 @@ Songs
                             <th class="text-center">Title</th>
                             <th class="text-center">Artist</th>
                             <th class="text-center">Video Url</th>
-                            <th class="text-center">Year</th>
+                            <th class="text-center">Release Date</th>
                             <th class="text-center">Views</th>
                             <th class="text-center">Action</th>
                         </tr>
@@ -34,7 +34,7 @@ Songs
                             <td>{{$song->title}}</td>
                             <td>{{$song->artist->name}}</td>
                             <td>{{$song->video_url}}</td>
-                            <td>{{$song->year}}</td>
+                            <td>{{$song->release_date}}</td>
                             <td>{{$song->views}}</td>
                             <td class="text-right">
                                 <a href="{{route('song.edit', $song->id)}}" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>

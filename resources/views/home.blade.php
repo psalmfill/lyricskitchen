@@ -15,7 +15,6 @@
                     @endif
 
                     You are logged in!
-                    {{auth()->user()->role->title}}
                 </div>
             </div>
         </div>

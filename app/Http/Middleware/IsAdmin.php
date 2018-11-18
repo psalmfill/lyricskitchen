@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use Illuminate\Support\Facades\Auth;
 use Closure;
 
-class IsAdmin
-{
+class IsAdmin {
     /**
      * Handle an incoming request.
      *
@@ -13,11 +12,20 @@ class IsAdmin
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next,$guard = null)
-    {   
-        if(\Auth::check() && \Auth::user()->isAdmin()){
-           return $next($request); 
+    public function handle($request, Closure $next,$guard=null)
+
+    {  
+        // dd(auth()->user());
+        
+        if(Auth::guard($guard)->check()){
+            
+            if(Auth::user()->isAdmin()){
+                // dd(55);
+                  return $next($request); 
+            }
+         
         }
+        // dd('aa');
         return redirect ('home');
 
         

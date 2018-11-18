@@ -21,7 +21,6 @@ class AlbumsController extends Controller
 
     public function index(){
         $albums = $this->album_repo->getAll();
-
         return \View::make('admin.albums.index',compact('albums'));
         
     }
@@ -38,7 +37,7 @@ class AlbumsController extends Controller
         if($this->album_repo->create($request)){
             \Alert::success("Success creating album","Success");
 
-            return redirect()->route('album_home');
+            return redirect()->route('admin.album.home');
         }
         else{
             \Alert::error("Fail creating album","Fail");
@@ -57,7 +56,7 @@ class AlbumsController extends Controller
         if($this->album_repo->delete($id)){
             \Alert::success("Success deleting genre","Success");
 
-            return redirect()->route('album_home');
+            return redirect()->route('admin.album.home');
         }else{
             \Alert::error("Fail creating genre","Fail");
 
@@ -66,7 +65,7 @@ class AlbumsController extends Controller
     }
     public function update($id,AlbumRequest $request){
 
-        if($this->album_repo->update($id,$request->except('_token'))){
+        if($this->album_repo->update($id,$request)){
             \Alert::success("Success updating album","Success");
             return redirect()->back();
         }else{

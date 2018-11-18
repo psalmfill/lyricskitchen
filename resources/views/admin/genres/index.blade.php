@@ -1,13 +1,13 @@
 @extends('layouts.admin')
 @section('page_title')
-Genure
+Genre
 @endsection
 @section('content')
 <div class="row">
     <div class="col-sm-12">
         <div class="white-box">
-            <h3 class="box-title m-b-0">Genures</h3>
-            <p class="text-muted m-b-30">List of all genures</p>
+            <h3 class="box-title m-b-0">Genres</h3>
+            <p class="text-muted m-b-30">List of all genres</p>
             <div class="table-responsive">
                 <table class="table  table-striped " id="artisttable">
                     <thead>
@@ -18,13 +18,13 @@ Genure
                         </tr>
                     </thead>
                     <tbody class="text-center">
-                        @foreach($genures as $genure)
+                        @foreach($genres as $genre)
                         <tr>
-                            <td>{{$genure->id}}</td>
-                            <td>{{$genure->name}}</td>
+                            <td>{{$genre->id}}</td>
+                            <td>{{$genre->name}}</td>
                             <td class="text-right">
-                                <a href="{{route('genure.edit', $genure->id)}}" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="{{route('genure.delete', $genure->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                <a href="{{route('genre.edit', $genre->id)}}" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="{{route('genre.delete', $genre->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                             </td>
                             
                         </tr>

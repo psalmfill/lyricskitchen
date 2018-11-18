@@ -22,9 +22,9 @@ class CreateSongsTable extends Migration
             $table->string('video_url')->nullable();
             $table->integer('artist_id');
             $table->integer('album_id')->nullable();
-            $table->integer('genure_id')->nullable();
+            $table->integer('genre_id')->nullable();
             $table->integer('views')->default(0);
-            $table->integer('year');
+            $table->date('release_date')->nullable();
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Repositories\Artists;
 use App\Repositories\Albums;
-use App\Repositories\Genures;
+use App\Repositories\Genres;
 use App\Repositories\Songs;
 use App\Http\Requests\SongRequest;
 
@@ -16,13 +16,13 @@ class SongsController extends Controller
     private $songs_repo ;
     private $artists_repo;
     private $albums_repo;
-    private $genures_repo;
+    private $genres_repo;
 
-    public function __construct(Artists $artists,Albums $albums, Genures $genures, Songs $song){
+    public function __construct(Artists $artists,Albums $albums, Genres $genres, Songs $song){
         $this->songs_repo = $song;
         $this->artists_repo = $artists;
         $this->albums_repo = $albums;
-        $this->genures_repo = $genures;
+        $this->genres_repo = $genres;
     }
 
     public function index(){
@@ -32,8 +32,8 @@ class SongsController extends Controller
     public function showForm(){
         $albums = $this->albums_repo->getAll();
         $artists = $this->artists_repo->getAll();
-        $genures = $this->genures_repo->getAll();
-        return view('admin.songs.create', compact('albums','artists','genures'));
+        $genres = $this->genres_repo->getAll();
+        return view('admin.songs.create', compact('albums','artists','genres'));
     }
 
     public function create(SongRequest $request)
@@ -47,11 +47,11 @@ class SongsController extends Controller
     }
     public function edit($id){
         $song = $this->songs_repo->getSongById($id);
-        // dd($song);
+        
         $albums = $this->albums_repo->getAll();
         $artists = $this->artists_repo->getAll();
-        $genures = $this->genures_repo->getAll();
-        return view('admin.songs.edit', compact('albums','artists','genures','song'));
+        $genres = $this->genres_repo->getAll();
+        return view('admin.songs.edit', compact('albums','artists','genres','song'));
 
     }
 
@@ -67,7 +67,6 @@ class SongsController extends Controller
     }
 
     public function update($id, SongRequest $request){
-
         if($this->songs_repo->update($id, $request->except('_token'))){
             \Alert::success("Success","Updated successful");
             return redirect()->back();

@@ -1,0 +1,390 @@
+body {
+    background: #f5f5f5;
+}
+.text-white {
+    color: #ffffff;
+}
+.main-nav {
+    z-index: 1000;
+    border: 1px solid black;
+    background: #1F1B20; 
+     width: 100%;
+     
+}
+.mobile-nav-close {
+    visibility: hidden;
+}
+.logo{
+    float: left;
+}
+.logo a {
+    font-size: 45px;
+}
+.main-nav .nav {
+    width: 60%;
+    float: right;
+}
+.main-nav .nav ul li{
+    display: inline-block;
+    width: 7em;
+    border: 1px solid black;
+   
+
+}
+.main-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+}
+.main-nav li:hover a{
+    color: #E4422E;
+}
+.index-nav {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    top:100px; 
+}
+.indexes {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.indexes .indexes-links{
+    max-width: 880px;
+    margin: 0 auto;
+    float: left;
+    padding: 0 2px;
+}
+.indexes li {
+    display: inline-block;
+    width: 2em;
+    background: #1F1B20;
+    margin-left: -4px; 
+    
+}
+.index-nav li a {
+    padding: 10px;
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+}
+.index-nav li:hover a{
+    background: #E4422E;
+    color: #ffffff;
+}
+.submit-lyrics {
+    background-color: #E4422E;
+    width: 120px;
+    padding: 3px;
+    float: left;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.submit-lyrics:hover a{
+    background: #1F1B20;
+    color: #ffffff;
+}
+.submit-lyrics a {
+    color:#ffffff;
+    display: block;
+}
+.lk-hold {
+   height: 500px;
+}
+.landing {
+    height: 500px;
+    border: 1px solid #5e2e7d;
+    position: absolute;
+    top: 0;
+    z-index: -1000;
+    width: 100%;
+
+    
+}
+.landing .cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #1F1B20;
+    opacity: 0.7;
+
+}
+.search-holder {
+    width: 600px;
+    text-align: center;
+    position: absolute;
+    top: 250px;
+    left: 30%;
+}
+
+.search-holder .search {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 65px;
+    text-align: left;
+    padding: 5px 20px;
+    margin-top: 50px;
+}
+.search p {
+    margin: 0;
+    color: #999999;
+}
+.search-holder input {
+    width: 100%;
+    margin: 0;
+    border: none;
+}
+.page-title {
+    /* position: absolute; */
+    bottom: 50px;
+    left: 100px;
+    color: #ffffff
+}
+.content {
+    width: 1170px;
+    background-color: #ffffff;
+    margin: 0 auto;
+    position: relative;
+    top: -50px;
+    padding: 5px 20px;
+}
+.heading {
+    text-transform: uppercase;
+}
+
+.pop-lyrics {
+    margin-bottom: 5%;
+}
+.slides {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.pop-lyrics .plyrics {
+    width: 200px;
+    height: 300px;
+    background: #5e2e7d;
+    position: relative;
+    padding: 10px;
+    float: left;
+    margin: 5px;
+}
+.plyrics .details{
+    position: absolute;
+    bottom: 0;
+}
+.news-item h4 {
+    font-weight: bold;
+}
+.plyrics a {
+    color: #ffffff;
+}
+.slide-left ,.slide-right {
+    background: #f1f1f1;
+    width: 40px;
+    height: 80px;
+    position: absolute;
+    top: 15%;
+    opacity: 0.9;
+}
+.slide-left {
+    left: 3%;
+}
+.slide-right {
+    right: 5%;
+}
+.latest-lyrics {
+    margin-top: 40px;
+}
+.latest-lyrics .llyrics .lyrics-item {
+    width: 370px;
+    padding: 5px;
+    float: left;
+}
+.latest-lyrics .llyrics .lyrics-item a {
+    color: #333333;
+    text-decoration: none;
+}
+.latest-lyrics .llyrics .lyrics-item a:hover {
+    color: #E4422E;
+}
+.lyrics-item.odd {
+    background: #f5f5f5;
+}
+.clear-fix {
+    clear: both;
+}
+.artist-card {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+.artist-card .cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #5e2e7d;
+    opacity: 0.7;
+}
+.artist-card .artist-name {
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+}
+.artist-card .artist-name a {
+    color: #ffffff;
+}
+.albums table {
+    margin-top: 20px;
+}
+.albums thead,.songs thead {
+    background: #f6f6f6;
+    color: #333333;
+}
+.genre ul li,.genre_songs ul li {
+    list-style: none;
+    width: 100%;
+    padding: 3%;
+}
+.genre ul li a, .genre_songs ul li a{
+    color: #1F1B20;
+}
+.genre ul li a:hover, .genre_songs ul li a:hover {
+    color: #E4422E;
+}
+.genre_songs ul li {
+    list-style: decimal;
+}
+.divider {
+    width: 100%;
+    border: 1px solid #f1f1f1;
+}
+.songs a {
+    color: #333333;
+}
+.songs td>a{
+    line-height: 40px;
+}
+.songs a:hover {
+    color: #E4422E;
+}
+.pagination ul li {
+    display: inline-block;
+    background: #f0f0f0;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+.pagination ul li.next {
+    width: auto;
+}
+.pagination ul li a {
+    display: block;
+    padding: 10px;
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+}
+.pagination ul li.active a,.pagination ul li:hover a {
+    background-color: #E4422E;
+    color: #ffffff;
+}
+footer {
+    height: 50px;
+    background: #1F1B20;
+}
+.bottom-nav ul li {
+    display: inline-block;
+    width: 4em;
+    line-height: 45px;
+}
+
+.bottom-nav ul li a{
+    color: #ffffff;
+}
+.bottom-nav ul li a:hover {
+    color: #E4422E;
+}
+@media (max-width : 765px){
+   
+    .lk-nav-toggle {
+        width: 40px;
+        padding: 3px;
+        background: #E4422E;
+    }
+    .bar {
+        height: 3px;
+        margin:5px;
+        background: #ffffff;
+    }
+    .logo {
+        border: 1px solid red;
+        float: right;
+    }
+    .logo a{
+        font-size: 18px;
+        text-align: center;
+        display: inline;
+    }
+    .main-nav {
+        position: static;
+    }
+    .main-nav .nav {
+        position: absolute;
+        width: 80%;
+        height: 100%;
+        background: #1F1B20;
+        z-index: 5000;
+        left: 0;
+        top: 0;
+        display: none;
+        
+    }
+    
+    .mobile-nav-close {
+        visibility: visible;
+        color: rgb(98, 228, 46);
+        padding: 10px;
+        height: 40px;
+        margin: 10px;
+        right: 0;
+        position: absolute;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .main-nav .nav ul {
+        line-height: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        margin-top: 20%;
+    }
+
+    .main-nav .nav ul li {
+        width: 100%;
+        /* display: block; */
+        height: 50px;
+        line-height: 45px;
+        margin: 0;
+        text-align: center;
+    
+    }
+    .index-nav{
+        position: static;
+        margin-top: 4px;
+    }
+    
+    .indexes  li {
+        margin-bottom: 1px;
+    }
+   
+    .search-holder {
+        width: 100%;
+        left: 0;
+    }
+
+}

@@ -1,0 +1,616 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.text-orange {
+    color: #E4422E;
+}
+body {
+    background-color: #f5f5f5;
+    text-align: left;
+}
+header {
+    /* background-color: #E4422E; */
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+}
+.nav {
+    float: right;
+    margin-top: 1%;
+    font-family:
+Georgia, "Times New Roman";
+
+}
+.logo {
+    float: left;
+}
+.logo a {
+    color: #ffffff;
+    font-size:2em;
+    text-transform: uppercase; 
+    display: block;
+    text-decoration: none;
+}
+.logo:hover a {
+    color: #E4422E;
+}
+.nav ul li {
+    display: inline-block;
+    width: 7em;
+}
+.nav ul li a {
+    color: #f5f5f5;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+.nav ul li:hover a, .nav ul li a.active{
+    color:#E4422E;
+}
+.menu-bar {
+    display: block;
+    height: 30px;
+    margin: 5px;
+    width: 30px;
+    background: black;
+    padding: 5px;
+    float: left;
+    margin-right: 5px;
+    cursor: pointer;
+    display: none;
+}
+.menu-bar:hover .bar{
+    background: #E4422E;
+}
+.menu-bar .bar {
+    height: 3px;
+    background: #ffffff;
+    margin-bottom: 6px;
+}
+#nav-close-btn {
+    color: #f5f5f5;
+    float: right;
+    padding: 5px;
+    cursor: pointer;
+    padding: 5px 20px;
+    display: none;
+}
+#nav-close-btn:hover {
+    color: #E4422E;
+}
+/* Alphabet listing */
+.index-nav {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    top:100px;
+}
+.indexes {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+.indexes .indexes-links{
+    width: 88%;
+    margin: 0 auto;
+    /* padding: 0 2px; */
+    float: left;
+    background: #1F1B20;
+    height: 40px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding-left: 8px;
+    
+}
+.indexes li {
+    display: inline-block;
+    width: 2.5em;
+    margin-left: -4px; 
+    height: 40px;
+    
+}
+.index-nav li a {
+    padding: 10px;
+    display: block;
+    /* font-size: 1.5em; */
+    /* padding-left: 5px;
+    padding-right: 5px; */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: bold;
+    height: 40px;
+
+}
+.index-nav li:hover a,.index-nav li a.active {
+    color: #E4422E;
+    background: #000000;
+    font-weight: 900;
+}
+.submit-lyrics {
+    background-color: #E4422E;
+    width: 120px;
+    font-size: 1.5em;
+    padding: 3px;
+    float: left;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    height: 40px;
+}
+.submit-lyrics:hover a{
+    background: #1F1B20;
+    color: #ffffff;
+}
+.submit-lyrics a {
+    color:#ffffff;
+    display: block;
+}
+/* landing */
+.landing {
+    height: 600px;
+    position: relative;
+    background-size:cover;
+}
+
+.landing .container {
+    text-align: center;
+}
+.landing-cover-img {
+    position: absolute;
+    z-index: -1000;
+    width: 100%;
+    height: 100%;
+}
+.search-holder{
+    position: absolute;
+    align-items: center;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
+    top: 50%;
+    z-index: 100;   
+}
+.search-holder h1{
+    color: #ffffff;
+}
+
+.search-holder .search {
+    background-color: #ffffff;
+    border-radius: 65px;
+    text-align: left;
+    padding: 0px 20px 12px 20px;
+    margin-top: 10%;
+    opacity: 0.9;
+    height: 50px;
+}
+.search p {
+    margin: 0;
+    color: #999999;
+
+}
+.search-holder .search input {
+    width: 100%;
+    margin: 0;
+    border: none;
+}
+.search-holder .search >div {
+    width:90%;
+    float: left;
+}
+.search-holder button {
+    background: transparent;
+    border: none;
+    padding: 1%;
+    cursor: pointer;
+}
+.search-choice {
+    display: none;
+}
+
+.search-choice li {
+   float: left;
+   margin: 0 20px;
+   list-style: none;
+   color: #ffffff;
+}
+.search-choice li input {
+    margin: 5px;
+}
+.cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #1F1B20;
+    opacity: 0.6;
+    z-index: 100;
+}
+.clear-fix {
+    clear: both;
+}
+.content {
+    background: #f5f5f5;
+}
+.lk-content-h {
+    background: #ffffff;
+    position: relative;
+    top: -50px;
+    z-index: 900;
+    padding: 1%;
+}
+
+.heading {
+    text-transform: uppercase;
+    padding: 1%;
+}
+.pop-lyrics {
+    margin-bottom: 5%;
+}
+#popular-lyrics {
+    list-style: none;
+}
+.slides {
+    margin: 0 auto;
+    width: 95%;
+    position: relative;
+    background: #1F1B20;
+
+}
+.pop-lyrics .plyrics {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    padding: 10px;
+    float: left;
+    margin: 5px;
+}
+.plyrics .cover {
+    background: #5e2e7d;
+    left: 0;
+    top: 0;
+    z-index: -600;
+    opacity: 0.4;
+}
+
+.plyrics .details{
+    position: absolute;
+    bottom: 0;
+}
+.plyrics a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.plyrics a:hover {
+    color: #E4422E;
+}
+.owl-next ,.owl-prev {
+    background: #f1f1f1 !important;
+    width: 40px;
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    margin-top: -40px;
+    opacity: 0.9;
+   
+}
+.ps-img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:0;
+    left: 0;
+    z-index: -900;
+}
+.owl-next span ,.owl-prev span {
+     font-size: 50px;
+}
+.owl-prev {
+    left: -1%;
+}
+.owl-next {
+    right: -1%;
+}
+.news-item h4 {
+    font-weight: bold;
+}
+.latest-lyrics {
+    margin-top: 40px;
+}
+
+.latest-lyrics .llyrics .lyrics-item {
+    width: 370px;
+    padding: 10px;
+    float: left;
+}
+.latest-lyrics .llyrics .lyrics-item p {
+    margin: 0;
+}
+.latest-lyrics .llyrics .lyrics-item a {
+    color: #333333;
+    text-decoration: none;
+}
+.latest-lyrics .llyrics .lyrics-item a:hover {
+    color: #E4422E;
+}
+.lyrics-item.odd {
+    background: #cccccc;
+}
+.lyrics-link {
+    font-size: 14px;
+    font-weight: bold;
+}
+.page-title {
+    color: white;
+    z-index: 900;
+    position: absolute;
+    bottom: 20%;
+}
+.active-index {
+    position: absolute;
+    z-index: 900;
+    top: 40%;
+    left: 50%;
+    margin-left: -75px;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+}
+.active-index h1 {
+    text-transform: uppercase;
+    font-size: 7em;
+    color: #E4422E;
+    font-weight: bolder;
+}
+.artist {
+    text-align: center;
+}
+.artist-card {
+    width: 150px;
+    height: 200px;
+    position: relative;
+    display: inline-block;
+    margin: 0 2px;
+}
+.artist-card img {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.artist-card .img-cover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #5e2e7d;
+    /* opacity: 0.5; */
+}
+.artist-card .artist-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #E4422E;
+    /* padding: 10px; */
+    width: 100%;
+    text-align: center;
+    z-index: 1000;
+}
+.artist-card .artist-name a {
+    color: #ffffff;
+}
+.albums table {
+    margin-top: 20px;
+}
+.albums th {
+    font-size: 1.5em;
+}
+.albums thead,.songs thead {
+    background: #f6f6f6;
+    color: #333333;
+}
+.albums-art {
+    width: 80px;
+    height: 80px;
+    
+}
+/* ----------------------------------------- */
+.albums .album-card {
+    border: 1px solid #cccccc;
+    margin: 5px;
+    padding: 10px;
+}
+.albums img {
+    float: left;
+    margin-right: 4%;
+}
+.albums .album-card h4 a {
+    color: #1F1B20;
+}
+.albums .album-card p a {
+    color: #E4422E;
+}
+
+.genre ul li,.genre_songs ul li {
+    list-style: none;
+    width: 100%;
+    padding: 3%;
+}
+.genre ul li a, .genre_songs ul li a{
+    color: #1F1B20;
+}
+.genre ul li a:hover, .genre_songs ul li a:hover {
+    color: #E4422E;
+}
+.genre_songs ul li {
+    list-style: decimal;
+}
+.divider {
+    width: 100%;
+    border: 1px solid #f1f1f1;
+}
+.songs a {
+    color: #333333;
+}
+.songs td>a{
+    line-height: 40px;
+}
+.songs a:hover {
+    color: #E4422E;
+}
+.song-title span {
+    font-size: 16px;
+    color: #5e2e7d;
+}
+.lyrics {
+    border-left: 2px solid #cccccc;
+    padding-left: 10px;
+}
+.lyrics h5 {
+    font-weight: bold;
+}
+.lyrics .lyrics-item a {
+    color: #E4422E;
+}
+.lyrics .lyrics-item .album {
+    color: #1F1B20;
+}
+.song-lyrics {
+    font-family: 'Courier New', Courier, monospace;
+    padding: 5px;
+    margin: 5px;
+}
+.pagination ul li {
+    display: inline-block;
+    background: #f0f0f0;
+    width: auto;
+    text-align: center;
+}
+.pagination ul li.next {
+    width: auto;
+}
+.pagination ul li a {
+    display: block;
+    padding: 5px 15px;
+    color: #333333;
+    text-decoration: none;
+    font-weight: bold;
+}
+.pagination ul li.active a,.pagination ul li:hover a {
+    background-color: #E4422E;
+    color: #ffffff;
+}
+.nf-notice {
+    margin: 4%
+}
+footer {
+    height: auto;
+    background: #1F1B20;
+}
+.bottom-nav ul {
+    float: right;
+}
+.bottom-nav ul li {
+    display: inline-block;
+    width: 7em;
+    line-height: 45px;
+}
+
+.bottom-nav ul li a{
+    color: #ffffff;
+    font-size: 1.1em;
+}
+.bottom-nav ul li a:hover {
+    color: #E4422E;
+}
+@media (max-width:1200px){
+    .index-nav {
+        display: none;
+    }
+    .search-holder {
+        width: 60%;
+        margin-left: -30%
+    }
+    .active-index {
+        
+        display: none;
+    }
+}
+@media (max-width:965px){
+    .nav {
+        float: left;
+    }
+}
+@media (max-width:765px){
+    .logo {
+        /* background: red; */
+        text-align: center;
+    }
+    .menu-bar {
+        display: block;
+    }
+    #nav-close-btn {
+        display: block;
+    }
+    #navigation {
+        
+        position: fixed;
+        height: 100%;
+        width: 80%;
+        z-index: 1200;
+        background: #1F1B20;
+        left: 0;
+        top: -1%;
+        display: none;
+    }
+    .nav ul {
+        width: 100%;
+        text-align: center;
+        clear: both;
+    }
+    .nav ul li {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid  #999999;
+        line-height: 15px;
+    }
+    .nav ul li a {
+        padding: 5%;
+        display: block;
+    }
+    
+   main .landing{
+        height: 300px !important;
+    }
+    .search-holder {
+        width: 80%;
+        height: 100px;
+        top: 20%;
+        margin-left: -40%;
+    }
+    .search-holder .search{
+        margin-top: 0;
+    }
+    .search-holder h2{
+        font-size: 18px;
+    }
+    .active-index {
+        
+        display: none;
+    }
+    
+    .latest-lyrics .llyrics .lyrics-item {
+        width: 100%;
+    }
+    .lyrics {
+        border-left:none;
+    }
+
+    .bottom-nav ul {
+        clear: both;
+        height: auto;
+    }
+    .bottom-nav ul li {
+        width: 100%;
+    }
+    
+
+}

@@ -35,8 +35,8 @@ Artists
                             <td>{{$album->songs->count()}}</td>
                             <td>{{$album->year}}</td>
                             <td class="text-right">
-                                <a href="{{route('album.edit', $album->id)}}" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="{{route('album.delete', $album->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
+                                <a href="{{route('admin.album.edit', $album->id)}}" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="{{$album->songs->count() > 0?'':route('admin.album.delete', $album->id)}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>
                             </td>
                             
                         </tr>

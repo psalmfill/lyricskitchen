@@ -31,11 +31,16 @@ class ArtistsController extends Controller
         if($this->artist_repo->create($request)){
             
             \Alert::success("Success creating Artist","Success");
-            return redirect()->route('artist_home');
+            return redirect()->route('admin.artist.home');
         }else{
             \Alert::error("Fail creating Artist","Fail");
-            return redirect()->route('artist_home');
+            return redirect()->route('admin.artist.home');
         }
+    }
+
+    public function edit($id){
+        $artist = $this->artist_repo->getArtistById($id);
+        return view('admin.artists.edit',compact('artist'));
     }
 
     public function delete($id)
@@ -43,12 +48,20 @@ class ArtistsController extends Controller
         if($this->artist_repo->delete($id)){
             \Alert::success("Success deleting artist","Success");
 
-            return redirect()->route('artist_home');
+            return redirect()->route('admin.artist.home');
         }else{
             \Alert::error("Fail creating artist","Fail");
 
-            return redirect()->route('artist_home');
+            return redirect()->route('admin.artist.home');
         }
+    }
+
+    public function update(ArtistRequest $request,$id){
+        
+        if($this->artist_repo->update($request,$id)){
+            return redirect()->back();
+        }
+
     }
     public function getartist(Request $request){
         $data = [];

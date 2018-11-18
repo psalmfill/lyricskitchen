@@ -19,7 +19,7 @@ class CreateAlbumsTable extends Migration
             $table->string('slug');
             $table->string('image')->default('album.png');
             $table->integer('artist_id');
-            $table->integer('year');
+            $table->year('year')->nullable();
             $table->timestamps();
         });
     }

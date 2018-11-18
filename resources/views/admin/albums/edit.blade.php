@@ -13,7 +13,7 @@ Add Album
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
         <div> <h3 class="box-title m-b-0 text-primary text-center">Add Album</h3><br></div>
-        <form action="{{route('album.update', $album->id)}}" class="form-horizontal " method="post">
+        <form action="{{route('admin.album.update', $album->id)}}" class="form-horizontal " method="post" enctype="multipart/form-data">
             {{csrf_field()}}
                 <div class="form-group">
                     <label for="title">Album Name</label>
@@ -41,7 +41,7 @@ Add Album
             
                 <div class="form-group">
                     <label for="image">Album Art</label>
-                    <input type="file" id="input-file-now" name="image" class="dropify" /> 
+                    <input type="file" id="input-file-now" name="image" class="dropify" value="{{$album->image}}"/> 
                 </div>
                 <input type="submit" class="btn btn-primary" value="Submit">
             </form>

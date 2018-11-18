@@ -21,9 +21,13 @@ class Songs {
         return $this->song->findorfail($id);
     }
 
-    public function getSongsbySlug($slug)
+    public function getSongbySlug($slug)
     {
         return $this->song->where('slug','=',$slug)->first();
+    }
+
+    public function getSongsByArtist($id){
+        return $this->song->where('artist_id','=', $id)->get();
     }
 
     public function getArtist($id){
@@ -31,12 +35,25 @@ class Songs {
         return $this->getSongbyId($id)->artist();
     }
 
+    public function getSongsByGenre($id){
+        return $this->song->where('genre_id','=',$id)->paginate(20);
+    }
     public function create($data){
         $data['slug'] = get_slug($data['title'],"Song");
         $data['tags'] = !empty($data['tags']) ? $data['tags']:"";
-        $data['year'] = !empty($data['year']) ? $data['year']:"";
+        $data['release_date'] = !empty($data['release_date']) ? $data['release_date']:"";
         $data['video_url'] = !empty($data['video_url']) ? $data['tags']:"";
-        if($this->song->create($data)){
+        $song = new Song();
+        $song->title =   $data['title'];
+        $song->slug =   $data['slug'];
+        $song->artist_id =   $data['artist_id'];
+        $song->album_id =   $data['album_id'];
+        $song->genre_id =   $data['genre_id'];
+        $song->release_date =   $data['release_date'];
+        $song->video_url =   $data['video_url'];
+        $song->tags =   $data['tags'];
+        $song->lyrics =   $data['lyrics'];
+        if($song->save()){
             return true;
         }
         else{

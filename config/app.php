@@ -174,6 +174,9 @@ return [
         App\Providers\RouteServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
         UxWeb\SweetAlert\SweetAlertServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        ShawnSandy\ImgFly\ImgflyServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
 
     ],
 
@@ -225,6 +228,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Datatables' => Yajra\Datatables\Facades\Datatables::class,
         'Alert' => UxWeb\SweetAlert\SweetAlert::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+        "Imgfly" => ShawnSandy\ImgFly\Classes\ImgflyFacade::class,
 
     ],
 

@@ -3,11 +3,9 @@
 Add Artist
 @endsection
 @section('page_styles')
-
     <link href="{{url('vendors/plugins/bower_components/summernote/dist/summernote.css')}}" rel="stylesheet" />
     <link href="{{url('vendors/plugins/bower_components/dropify/dist/css/dropify.min.css')}}" rel="stylesheet" />
-    <link href="{{url('vendors/plugins/bower_components/sweetalert/sweetalert.css')}}" rel="stylesheet" />
-    
+    <link href="{{url('vendors/plugins/bower_components/sweetalert/sweetalert.css')}}" rel="stylesheet" />  
 @endsection
 
 @section('content')
@@ -15,7 +13,7 @@ Add Artist
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
         <div> <h3 class="box-title m-b-0 text-primary text-center">Add Artist</h3><br></div>
-        <form action="{{route('create_artist')}}" class="form-horizontal " method="post" enctype="multipart/form-data">
+        <form action="{{route('admin.artist.create')}}" class="form-horizontal " method="post" enctype="multipart/form-data">
             {{csrf_field()}}
                 <div class="form-group">
                     <label for="name">Artist Name</label>

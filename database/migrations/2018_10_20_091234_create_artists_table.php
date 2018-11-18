@@ -19,7 +19,7 @@ class CreateArtistsTable extends Migration
             $table->string('slug');
             $table->longText('biography');
             $table->string('avatar')->default('artist.png');
-            $table->string('year');
+            $table->year('year')->nullable;
             $table->timestamps();
         });
     }

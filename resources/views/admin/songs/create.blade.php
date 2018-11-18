@@ -17,7 +17,7 @@ Add Song
         <div class="col-md-9 col-md-offset-1">
             <h3 class="box-title m-b-0 text-primary text-center">Add New Song</h3>
             <br>
-            <form class="form"  action="{{route('create_song')}}" method="post">
+            <form class="form"  action="{{route('admin.song.create')}}" method="post">
             {{csrf_field()}}
                 <div class="form-group">
                     <label for="title">Song Title</label>
@@ -39,10 +39,10 @@ Add Song
                     </select> 
                 </div>
                 <div class="form-group">
-                    <label for="genure_id">Genre</label>
-                    <select name="genure_id" id="genre" class="form-control ">
-                        @foreach($genures as $genure)
-                        <option value="{{$genure->id}}">{{$genure->name}}</option>
+                    <label for="genre_id">Genre</label>
+                    <select name="genre_id" id="genre" class="form-control ">
+                        @foreach($genres as $genre)
+                        <option value="{{$genre->id}}">{{$genre->name}}</option>
                         @endforeach
                     </select> 
                 </div>
@@ -110,7 +110,7 @@ Add Song
                 data:{'id':artist},
                 success: function (data) {
                 $.each(data,function(id,title){
-                    $('#albums').append('<option values="'+id+'">'+title+'</option>');
+                    $('#albums').append('<option value="'+id+'">'+title+'</option>');
                 });
             }
         })

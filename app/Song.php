@@ -3,11 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
 class Song extends Model
 {
     //
-    protected $fillable = ['title','artist_id','genure_id','album_id','slug','lyrics','tags','video_url','year'];
+    protected $fillable = ['title','artist_id','genre_id','album_id','slug','lyrics','tags','video_url','release_date'];
     public function artist()
     {
 
@@ -20,8 +19,8 @@ class Song extends Model
         return $this->belongsTo('App\Album');
     }
 
-    public function genure()
+    public function genre()
     {
-        return $this->belongsTo('App\Genure');
+        return $this->belongsTo('App\Genre');
     }
 }

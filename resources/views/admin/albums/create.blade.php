@@ -14,7 +14,7 @@ Add Album
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
         <div> <h3 class="box-title m-b-0 text-primary text-center">Add Album</h3><br></div>
-        <form action="{{route('create_album')}}" class="form-horizontal " method="post">
+        <form action="{{route('admin.album.create')}}" class="form-horizontal " method="post" enctype="multipart/form-data">
             {{csrf_field()}}
                 <div class="form-group">
                     <label for="title">Album Name</label>

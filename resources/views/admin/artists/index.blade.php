@@ -21,6 +21,7 @@ Artists
                             <th class="text-center">#</th>
                             <th class="text-center">Artist Name</th>
                             <th class="text-center">Year</th>
+                            <th class="text-center">Albums</th>
                             <th class="text-center">Songs</th>
                             <th class="text-center">Action</th>
                         </tr>
@@ -32,15 +33,15 @@ Artists
                             <td>{{$artist->name}}</td>
                             <td>{{$artist->year}}</td>
                             <td>{{$artist->albums()->count()}}</td>
+                            <td>{{$artist->songs()->count()}}</td>
                             <td class="text-right">
-                                <a href="{{route('artist.delete', $artist->id)}}" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
-                                <a href="{{$artist->albums()->count()==0?route('artist.delete', $artist->id):''}}" class="btn btn-danger"
-                                @if($artist->albums()->count() > 0)
+                                <a href="{{route('admin.artist.edit', $artist->id)}}" class="btn btn-success"><i class="fas fa-pencil-alt"></i></a>
+                                <a href="{{$artist->songs()->count()==0?route('admin.artist.delete', $artist->id):''}}" class="btn btn-danger"
+                                @if($artist->songs()->count() > 0)
                                 disabled
                                 @endif
                                 ><i class="fas fa-trash-alt"></i></a>
                             </td>
-                            
                         </tr>
                         @endforeach
                     </tbody>

@@ -3,8 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Genure extends Model
+class Genre extends Model
 {
     //
     protected $fillable = ['name'];

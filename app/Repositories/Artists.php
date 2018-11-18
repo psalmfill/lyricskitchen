@@ -12,6 +12,9 @@ class Artists {
     {
         $this->artist = $artist;
     }
+    public function get(){
+        return $this->artist;
+    }
 
     public function getAll(){
         return $this->artist->all();
@@ -37,6 +40,12 @@ class Artists {
         return $artist->albums();
     }
 
+    public function getArtistsByIndex($index){
+        return $this->artist->where('name','like',$index .'%');
+    }
+    public function getArtistByName($name){
+        return $this->artist->where('name','=',$name)->first();
+    }
     public function create($request)
     {  $data = $request->all();
         $artist = new Artist();
@@ -47,7 +56,7 @@ class Artists {
          if ($request->hasFile('image')) {
                 $file = $request->file('image');
                 $extension = $file->extension()?: 'png';
-                $picture = $artist->slug . '.' . $extension;
+                $picture = str_random(10). '.' . $extension;
                 $destinationPath = public_path() . '/uploads/artists/';
                 $file->move($destinationPath, $picture);
                 $artist->avatar = $picture;
@@ -62,6 +71,36 @@ class Artists {
             return false;
         }
         
+    }
+
+    public function update($request, $id) {
+        $artist = $this->artist->find($id);
+        $artist_image = $artist->avatar;
+        $updata = [
+            'name' => $request->get('name'),
+            'slug' => check_slug($request->get('name'),'Artist',$id),
+            'biography' => $request->get('bio'),
+            'year' => $request->get('year'),
+        ];
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $extension = $file->extension()?: 'png';
+            $picture = str_random(10) . '.' . $extension;
+            $destinationPath = public_path() . '/uploads/artists/';
+            $file->move($destinationPath, $picture);
+            $updata['avatar'] = $picture;
+        }else{
+            $updata['avatar'] = "artist.jpg";
+        }
+        if($artist->update($updata)){
+            
+            if(file_exists(public_path().'uploads/artists/'.$artist_image)){
+                uplink(public_path().'uploads/artists/'.$artist_image);
+            }
+            return true;
+        }else{
+            return false;
+        }
     }
     public function delete($id)
     {   $artist = $this->artist->find($id);
